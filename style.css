@@ -1,0 +1,51 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #1c1c1c;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icons a {
+  margin-right: 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.badge {
+  padding: 8px 16px;
+  background-color: #0073e6;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.badge:hover {
+  opacity: 1;
+}
