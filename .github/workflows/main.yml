@@ -1,0 +1,30 @@
+name: Cypress Tests and invalidate CF cache
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    cypress-run:
+        name: Cypress run
+        runs-on: ubuntu-latest
+        permissions:
+            id-token: write
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: configure aws credentials
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                role-to-assume: ${{ secrets.AWS_ROLE_FOR_GITHUB }}
+                role-session-name: GithubActions
+                aws-region: us-east-1
+
+            - name: Cypress run tests
+              uses: cypress-io/github-action@v6
+              with:
+                browser: chrome
+                spec: cypress/e2e/homepage.cy.js
+                config-file: cypress.config.js

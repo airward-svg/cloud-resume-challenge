@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "cypress": "^13.6.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.465.0",
+    "axe-core": "^4.8.2",
+    "cypress-axe": "^1.5.0",
+    "dotenv": "^16.3.1"
+  }
+}
