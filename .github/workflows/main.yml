@@ -33,6 +33,7 @@ jobs:
             - name: Cypress run tests
               uses: cypress-io/github-action@v6
               with:
+                working-directory: tests/
                 project: ./tests
                 browser: chrome
                 spec: tests/cypress/e2e/homepage.cy.js
