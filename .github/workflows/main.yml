@@ -15,26 +15,25 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: configure aws credentials
-              uses: aws-actions/configure-aws-credentials@v4
-              with:
-                role-to-assume: ${{ secrets.AWS_ROLE_FOR_GITHUB }}
-                role-session-name: GithubActions
-                aws-region: us-east-1
+            # - name: configure aws credentials
+            #   uses: aws-actions/configure-aws-credentials@v4
+            #   with:
+            #     role-to-assume: ${{ secrets.AWS_ROLE_FOR_GITHUB }}
+            #     role-session-name: GithubActions
+            #     aws-region: us-east-1
 
-            - name: Deploy to S3
-              run: |
-                aws s3 sync src s3://dawarjafri.com --acl private --region ap-south-1
+            # - name: Deploy to S3
+            #   run: |
+            #     aws s3 sync src s3://dawarjafri.com --acl private --region ap-south-1
 
-            - name: Invalidate CF cache
-              run: |
-                aws cloudfront create-invalidation --distribution-id EWOYWG7WD9SKS --paths "/index.html"
+            # - name: Invalidate CF cache
+            #   run: |
+            #     aws cloudfront create-invalidation --distribution-id EWOYWG7WD9SKS --paths "/index.html"
 
             - name: Cypress run tests
               uses: cypress-io/github-action@v6
               with:
                 working-directory: tests/
-                project: ./tests
                 browser: chrome
                 spec: tests/cypress/e2e/homepage.cy.js
                 config-file: tests/cypress.config.js
