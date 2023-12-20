@@ -49,3 +49,13 @@ section {
 .badge:hover {
   opacity: 1;
 }
+
+.project-item ul li a {
+  font-weight: lighter; /* Adjust the font weight as needed */
+  color: #799ACC;
+  text-decoration: none;
+}
+
+.project-item ul li a:hover {
+  text-decoration: underline;
+}

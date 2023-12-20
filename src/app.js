@@ -9,7 +9,6 @@ async function updateCounter() {
     viewsBadge.innerHTML = `Views: ${data}`;
   } catch (error) {
     console.error("Error fetching views:", error);
-    viewsBadge.innerHTML = "Views: Error";
   }
 }
 
