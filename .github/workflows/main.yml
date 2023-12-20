@@ -35,5 +35,3 @@ jobs:
               with:
                 working-directory: tests/
                 browser: chrome
-                spec: tests/cypress/e2e/homepage.cy.js
-                config-file: tests/cypress.config.js
